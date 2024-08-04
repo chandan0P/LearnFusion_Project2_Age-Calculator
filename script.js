@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (day && month && year) {
             const birthDate = new Date(year, month - 1, day);
-            const age = calculateAge(birthDate);
-            resultDiv.textContent = `You are ${age} years old.`;
+            const ageDetails = calculateAge(birthDate);
+            resultDiv.innerHTML = `You are ${ageDetails.years} years, ${ageDetails.months} months, and ${ageDetails.days} days old.`;
         } else {
             resultDiv.textContent = 'Please enter a valid date of birth.';
         }
@@ -20,11 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function calculateAge(birthDate) {
         const today = new Date();
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const monthDiff = today.getMonth() - birthDate.getMonth();
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
+        let years = today.getFullYear() - birthDate.getFullYear();
+        let months = today.getMonth() - birthDate.getMonth();
+        let days = today.getDate() - birthDate.getDate();
+
+        if (days < 0) {
+            months--;
+            days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
         }
-        return age;
+
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+
+        return { years, months, days };
     }
 });
