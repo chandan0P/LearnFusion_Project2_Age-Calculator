@@ -1,11 +1,11 @@
 # Age Calculator Web Application
 
-This is a simple web-based age calculator created using HTML, CSS, and JavaScript. It allows users to input their date of birth (day, month, and year) and calculates their age based on the current date. JavaScript's built-in date and time functions simplify the age calculation process, making it easy to determine someone's age.
+This is a simple web-based age calculator created using HTML, CSS, and JavaScript. It allows users to input their date of birth (day, month, and year) and calculates their age based on the current date. JavaScript's built-in date and time functions simplify the age calculation process, making it easy to determine someone's age in years, months, and days.
 
 ## Features
 
 - Input fields for day, month, and year of birth
-- Calculates and displays the user's age
+- Calculates and displays the user's age in years, months, and days
 - Simple and user-friendly interface
 
 ## Project Structure
@@ -32,7 +32,7 @@ This is a simple web-based age calculator created using HTML, CSS, and JavaScrip
 
 1. Open the application in your web browser.
 2. Enter your date of birth in the input fields (day, month, and year).
-3. Click the "Calculate Age" button to calculate and display your age.
+3. Click the "Calculate Age" button to calculate and display your age in years, months, and days.
 
 ## Customization
 
